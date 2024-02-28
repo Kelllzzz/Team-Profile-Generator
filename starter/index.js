@@ -158,14 +158,7 @@ const addEmployee = () => {
             name: "role",
             message: "Which employee would you like to add to your Team?",
             choices: ["Engineer", "Intern", "Finish building the team"],
-            validate: role => {
-                if (role) {
-                    return true;
-                } else {
-                    console.log("Please select an option !")
-                    return false;
-                }
-            }
+
         }
     ]).then(({ role }) => {
         if (role === "Finish building the team") {
@@ -175,7 +168,7 @@ const addEmployee = () => {
         }
     });
 };
-
+// Function to render the HTML file
 const writeFile = () => {
     console.log("Your team profile has been successfully created! Please check out the team.html file");
     fs.writeFileSync(outputPath, render(employees));

@@ -57,8 +57,8 @@ const questionsForEngineer = [
     },
 ];
 
- //if intern role is selected
-const questionsForIntern = [  
+//if intern role is selected
+const questionsForIntern = [
     {
         type: 'input',
         name: 'school',
@@ -66,3 +66,58 @@ const questionsForIntern = [
     },
 ];
 
+const init = async () => {
+    const employees = [];
+    let addMore = true;
+
+    while (addMore) {
+        try {
+            const { name, id, email, role } = await inquirer.prompt(questions);
+
+            let additionalPrompt = null;
+            if (role === 'Manager') {
+                additionalPrompt = inquirer.prompt(questionsForManager);
+            } else if (role === 'Engineer') {
+                additionalPrompt = inquirer.prompt(questionsForEngineer);
+            } else {
+                additionalPrompt = inquirer.prompt(questionsForIntern);
+            }
+
+            const { officeNumber, github, school } = await additionalPrompt;
+
+            if (role === 'Manager') {
+                employees.push(new Manager(name, id, email, officeNumber));
+            } else if (role === 'Engineer') {
+                employees.push(new Engineer(name, id, email, github));
+            } else {
+                employees.push(new Intern(name, id, email, school));
+            }
+
+            const { adding } = await inquirer.prompt({
+                type: 'confirm',
+                name: 'adding',
+                message: 'Do you want to add more employees?',
+                default: true
+            });
+            addMore = adding;
+        } catch (error) {
+            console.error("Error occurred while adding employees:", error);
+            return employees; // Return the current employees array in case of an error
+        }
+    }
+
+    return employees;
+};
+
+// function to generate HTML
+init().then(employees => {
+    const html = render(employees); 
+    const OUTPUT_DIR = path.resolve(__dirname, 'output');
+    const outputPath = path.join(OUTPUT_DIR, 'team.html');
+
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true }); // Create the output directory if it doesn't exist
+    fs.writeFileSync(outputPath, html); // Write the HTML to a file
+    console.log("Your team's basic info HTML is created!");
+}).catch(error => {
+    console.error("Error in init function:", error);
+});

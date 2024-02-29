@@ -26,7 +26,7 @@ This project is licensed under the Apache license.
 
 
 ## Sample HTML file 
-file:///C:/Users/seedo/Challenge-10/Team-Profile-Generator/starter/output/team.html
+[Click Here](file:///C:/Users/seedo/Challenge-10/Team-Profile-Generator/starter/output/team.html)
 
 
 ## Tests

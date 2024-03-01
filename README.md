@@ -16,9 +16,9 @@ To run the Team Profile Generator, follow these steps:
 
 
 ## Usage
-![To use this profile generator, open the index.js file in the integrated terminal, type node index.js and answer the questions that are prompted](./starter/Images/Screenshot%202024-02-28%20230352.png)
-![test sheet](./starter/Images/Screenshot%202024-02-28%20233851.png)
-![test sheet 2](./starter/Images/Screenshot%202024-02-28%20233733.png)
+![To use this profile generator, open the index.js file in the integrated terminal, type node index.js and answer the questions that are prompted](./Images/Screenshot%202024-02-28%20230352.png)
+![test sheet](./Images/Screenshot%202024-02-28%20233851.png)
+![test sheet 2](./Images/Screenshot%202024-02-28%20233733.png)
 
 
 ## Credits

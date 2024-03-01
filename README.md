@@ -4,11 +4,15 @@
 
 
 ## Description
-This Team - Profile generator was designed for creating an employee team profile. It functions by generating a html file with different employee profiles based on the user's input.
+This Team - Profile generator was designed for creating an employee team profile. It functions by prompting the user with different questions based on each employee profiles and gathers information based on the user's input.This application then generates an HTML webpage that displays summaries for each employee.
 
 
 ## Installation
-N/A
+To run the Team Profile Generator, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Open the folder in the integrated terminal.
+3. Run npm install to install all dependencies of the project from the package.json file.
 
 
 ## Usage
@@ -30,5 +34,5 @@ http://127.0.0.1:5500/Team-Profile-Generator/starter/output/team.html
 
 
 ## Tests
-Open tests file in an integrated terminal and type npm run dev
+Open the tests file in an integrated terminal and type npm run dev
 
